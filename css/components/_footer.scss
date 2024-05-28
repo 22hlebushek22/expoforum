@@ -1,0 +1,206 @@
+.footer {
+  padding: 60px 0 70px;
+  background-color: var(--main-green);
+
+  &__container {
+    @include tablet {
+      grid-gap: 50px;
+    }
+  }
+
+  &__column {
+    grid-column: 3 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
+
+    @include small-tablet {
+      grid-column: 3 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__content:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
+  &__content-soc:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: var(--second-family);
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: -0.21px;
+    color: var(--light-color);
+  }
+
+  &__title-form {
+    margin-bottom: 15px;
+  }
+
+  &__list-soc {
+    display: flex;
+    padding: 10px 0 ;
+    gap: var(--offset);
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__item-form {
+    grid-column: 3 span;
+  }
+
+  &__link-descr {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.9px;
+    border-bottom: 1px solid transparent;
+    color: #E0E0E0;
+    transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: var(--main-yellow);
+      border-color: var(--main-yellow);
+    }
+
+    &:active {
+      color: var(--main-active-yellow);
+      border-color: var(--main-active-yellow);
+    }
+
+    &.focus-visible {
+      color: var(--main-yellow);
+      border-bottom: 1px solid var(--main-yellow);
+    }
+  }
+
+  &__app {
+    @include small-tablet {
+      width: 100px;
+    }
+  }
+
+  &__link-soc {
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover path{
+      transition: fill 0.3s ease-in-out;
+      fill: var(--main-yellow);
+    }
+
+    &:active path{
+      transition: fill 0.3s ease-in-out;
+      fill: var(--main-active-yellow);
+    }
+
+    &.focus-visible path,
+    &.focus-visible {
+      transition: fill 0.3s ease-in-out;
+      outline: none;
+      fill: var(--main-yellow);
+    }
+
+    svg {
+      @include small-tablet {
+        width: 25px;
+      }
+    }
+  }
+
+  &__link-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18.9px;
+    border-bottom: 1px solid transparent;
+    color: #E0E0E0;
+  }
+
+  &__form {
+    margin-top: 25px;
+    display: flex;
+  }
+
+  &__input {
+    padding: 11px 20px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16.2px;
+    border: 2px solid var(--light-color);
+    color: #9C9C9C;
+    transition: border-color 0.3s ease-in-out;
+
+    &.focus-visible {
+      outline: none;
+      border-color: var(--main-yellow);
+    }
+
+    @include small-tablet {
+      padding: 5px 8px;
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    padding: 10px;
+    padding-bottom: 4px;
+    background-color: var(--main-red);
+    background-position: center;
+    border: 2px solid var(--main-red);
+    transition: border-color 0.3s ease-in-out;
+
+    &:focus {
+      border-color: var(--main-yellow);
+    }
+
+    &:hover {
+      border-color: var(--main-yellow);
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+
+    &.focus-visible {
+      outline: none;
+      border: 2px solid var(--main-yellow);
+    }
+
+    @include small-tablet {
+      padding: 4px;
+      padding-bottom: 1px;
+    }
+  }
+
+  &__button-image {
+    @include small-tablet {
+      width: 13px;
+    }
+  }
+
+  @include mobile {
+    padding: 50px 0;
+  }
+}

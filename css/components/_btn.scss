@@ -1,0 +1,27 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  border: 2px solid transparent;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    border-color: var(--main-active-yellow);
+  }
+
+  @include hover {
+    border-color: var(--main-yellow);
+  }
+}
+
+.btn.focus-visible {
+  border-color: var(--main-yellow);
+}
+

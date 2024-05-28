@@ -1,0 +1,260 @@
+.news {
+  position: relative;
+  background-color: var(--main-ice-cream);
+  padding: 75px 0 85px 0;
+
+  &__container {
+    @include small-tablet {
+      grid-gap: var(--offset)
+    }
+  }
+
+  &__left {
+    grid-column: 5 span;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include tablet {
+      grid-column: 3 span;
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__btn-img:not(:last-child) {
+    margin-bottom: 59px;
+  }
+
+  &__right {
+    grid-column: 7 / 6 span;
+
+    @include tablet {
+      grid-column: 4 / 3 span;
+    }
+
+    @include small-tablet {
+      grid-column: 6 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__top {
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include mobile {
+      align-items: baseline;
+      margin-bottom: 15px;
+    }
+
+  }
+
+  &__title {
+    color: var(--other-black);
+  }
+
+  &__link {
+    position: relative;
+    text-align: right;
+    font-weight: 500;
+    font-family: var(--second-family);
+    font-size: var(--second-size);
+    color: var(--other-black);
+    transition: color .3s ease-in-out, fill .3s ease-in-out;
+
+    @include small-tablet {
+      font-size: var(--main-size);
+    }
+
+    @include mobile {
+      font-size: var(--mini-size);
+    }
+
+    &:focus,
+    &:focus .news__svg,
+    &__link::before {
+      outline: none;
+    }
+
+    &:hover,
+    &:hover .news__svg path,
+    &:hover::before {
+      transition: color .3s ease-in-out, fill .3s ease-in-out, border-color .3s ease-in-out;
+      fill: var(--main-yellow);
+      color: var(--main-yellow);
+      border-color: transparent;
+    }
+
+    &:active,
+    &:active .news__svg path,
+    &:active::before {
+      transition: color .3s ease-in-out, fill .3s ease-in-out, border-color .3s ease-in-out;
+      fill:  var(--main-active-yellow);
+      color:  var(--main-active-yellow);
+      border-color: var(--main-active-yellow);
+    }
+
+    &.focus-visible,
+    &.focus-visible::before,
+    &.focus-visible path {
+      outline: none;
+      color: var(--main-yellow);
+      fill: var(--main-yellow);
+      border-color: var(--main-yellow);
+    }
+  }
+
+  &__link::before {
+    position: absolute;
+    content: "";
+    width: 80%;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--other-black);
+    opacity: 1;
+    transition: border-color .3s ease-in-out;
+
+    @include small-tablet {
+      width: 82%;
+    }
+  }
+
+  &__svg {
+    @include small-tablet {
+      width: 16px;
+    }
+  }
+
+  &__btn-img:not(:last-child) {
+
+    @include big-desktop {
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      margin-bottom: var(--offset);
+    }
+  }
+
+  &__list {
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: var(--offset);
+
+    @include mobile {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    grid-column: 6 span;
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  @include mobile {
+    padding: 50px 0;
+  }
+}
+
+.news-card {
+  position: relative;
+  align-items: center;
+  grid-template-columns: repeat(6, 1fr);
+
+  &__right-img {
+    grid-column: 2 span;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__content {
+    grid-column: 3 / 4 span;
+    padding: 15px 10px 15px 0;
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    margin-bottom: 14px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.6px;
+    color: var(--main-red);
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-family: var(--second-family);
+    font-size: var(--second-size);
+    line-height: 27.3px;
+    letter-spacing: -0.21px;
+
+    @include mobile {
+      font-size: var(--main-size);
+    }
+  }
+
+  &__link {
+    color: var(--other-black);
+    transition: color 0.3s ease-in-out, border 0.3s ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: var(--main-yellow);
+      border-bottom: 1px solid var(--main-yellow);
+    }
+
+    &:active {
+      color: var(--main-active-yellow);
+      border-bottom: 1px solid var(--main-active-yellow);
+    }
+
+    &.focus-visible,
+    &.focus-visible::after {
+      outline: none;
+      color: var(--main-yellow);
+    }
+  }
+
+  &__link-news {
+    color: var(--main-red);
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

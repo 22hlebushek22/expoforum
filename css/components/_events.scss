@@ -1,0 +1,199 @@
+.events {
+  padding: 75px 0 79px 0;
+  background-color: var(--main-yellow);
+
+  &__top {
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 55px;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: var(--offset);
+    }
+  }
+
+  &__title {
+    color: var(--other-black);
+  }
+
+  &__link {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 82%;
+      left: 0;
+      bottom: -2px;
+      z-index: 150;
+      border-bottom: 1px solid var(--other-black);
+      opacity: 1;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+  }
+
+  &__link,
+  &__svg path {
+    text-align: right;
+    font-weight: 500;
+    font-family: var(--second-family);
+    font-size: var(--second-size);
+    color: var(--other-black);
+    transition: color 0.3s ease-in-out, fill 0.3s ease-in-out;
+
+    &:focus,
+    &:focus .events__svg,
+    &__link::before {
+      outline: none;
+    }
+
+    &:hover,
+    &:hover .events__svg path,
+    &:hover::before {
+      transition: color .3s ease-in-out, fill .3s ease-in-out, border-color 0.3s ease-in-out;
+      fill: var(--light-color);
+      color: var(--light-color);
+      border-color: transparent;
+    }
+
+    &:active,
+    &:active .events__svg path,
+    &:active::before {
+      transition: color .3s ease-in-out, fill .3s ease-in-out, border-color .3s ease-in-out;
+      fill:  var(--light-color);
+      color:  var(--light-color);
+      border-color: var(--light-color);
+    }
+
+    &.focus-visible,
+    &.focus-visible::before,
+    &.focus-visible path {
+      outline: none;
+      color: var(--light-color);
+      fill: var(--light-color);
+      border-color: var(--light-color);
+    }
+
+    @include small-tablet {
+      font-size: var(--main-size);
+    }
+
+    @include small-tablet {
+      font-size: var(--mini-size);
+    }
+  }
+
+  &__svg {
+    margin-left: 5px;
+
+    @include small-tablet {
+      width: 16px;
+    }
+  }
+
+  &__list {
+    row-gap: 10px;
+
+    @include mobile {
+      row-gap: var(--offset);
+    }
+  }
+
+  &__item {
+    grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
+
+    @include small-tablet {
+      grid-column: 3 span;
+    }
+
+    @include mobile {
+      grid-column: 4 span;
+    }
+  }
+
+  @include mobile {
+    padding: 50px 0;
+  }
+}
+
+.events-card {
+  position: relative;
+
+  &__content {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+
+    @include mobile {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__date {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: var(--mini-size);
+    line-height: 18.9px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-family: var(--second-family);
+    font-size: var(--second-size);
+    line-height: 27.3px;
+    letter-spacing: -0.21px;
+  }
+
+  &__link {
+    color: var(--main-red);
+    transition: color 0.3s ease-in-out, border 0.3s ease-out;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: var(--light-color);
+    }
+
+    &:active {
+      color: var(--light-color);
+      border-bottom: 1px solid var(--light-color);
+    }
+
+    &.focus-visible {
+      outline: none;
+      color: var(--light-color);
+      border-bottom: 1px solid var(--light-color);
+    }
+  }
+
+  &__descr {
+    margin: 0;
+    font-weight: 400;
+    font-size: var(--main-size);
+    line-height: 21.6px;
+  }
+
+  &__img:hover {
+    transform: scale(1.2);
+  }
+}
